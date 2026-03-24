@@ -8,7 +8,8 @@
 **Total de registros:** ~3,65 milhões de contratos públicos
 
 ---
-
+Disclaimer / Aviso Legal Nota Importante: Os dados e análises apresentados neste repositório foram capturados exclusivamente para fins de estudo da API do PNCP. O pipeline de ingestão e processamento não passou por auditoria externa e as informações constantes não devem ser utilizadas como base para decisões oficiais ou denúncias, servindo apenas como demonstração técnica de Engenharia de Dados. O autor não se responsabiliza pela exatidão integral dos dados brutos provenientes da fonte original.
+---
 ## Sumário
 
 Disclaimer / Aviso Legal
