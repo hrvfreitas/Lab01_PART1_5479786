@@ -212,6 +212,7 @@ def g6_delay_publicacao(engine):
 # ---------------------------------------------------------------------------
 def g7_usp_fornecedores(engine):
     print('  G7: Top fornecedores USP...')
+    # Usamos % no lugar de 'São' para pegar 'SAO' ou 'SÃO'
     sql = text("""
         SELECT
             COALESCE(forn.nome_contratada, f.cnpj_contratada, 'N/I') AS fornecedor,
@@ -220,21 +221,25 @@ def g7_usp_fornecedores(engine):
         FROM fato_contratos f
         JOIN dim_orgaos o ON f.orgao_entidade_id = o.orgao_entidade_id
         LEFT JOIN dim_fornecedores forn ON f.cnpj_contratada = forn.cnpj_contratada
-        WHERE o.nome_orgao ILIKE '%Universidade de São Paulo%'
+        WHERE o.nome_orgao ILIKE '%Universidade%S%o%Paulo%'
         GROUP BY 1 ORDER BY 3 DESC LIMIT 10
     """)
     with engine.connect() as conn:
         df = pd.read_sql(sql, conn)
     
-    if df.empty: return
-    df['fornecedor'] = df['fornecedor'].astype(str).str[:35]
+    if df.empty:
+        print("  ⚠️ Nenhum dado encontrado para USP (verifique o nome no banco).")
+        return
 
+    df['fornecedor'] = df['fornecedor'].astype(str).str[:35]
     plt.figure(figsize=(12, 7))
     sns.barplot(data=df, x='valor_mi', y='fornecedor', palette=PALETA)
     plt.title('G7 — Top 10 Fornecedores USP (R$ Milhões)')
     plt.tight_layout()
     plt.savefig(GRAFICOS_DIR / 'g7_usp_fornecedores.png')
     plt.close()
+    print("    ✓ g7_usp_fornecedores.png gerado!")
+
 
 # ---------------------------------------------------------------------------
 # G8 — Heatmap Ticket Médio (Incluso)
