@@ -5,7 +5,7 @@ services:
     restart: unless-stopped
     environment:
       POSTGRES_DB:       pncp_db
-      POSTGRES_USER:     postgres
+      POSTGRES_USER:      postgres
       POSTGRES_PASSWORD: postgres
     ports:
       - "5432:5432"
@@ -36,21 +36,6 @@ services:
       timeout: 5s
       retries: 5
 
-  samba:
-    image: dperson/samba
-    container_name: samba_share
-    restart: unless-stopped
-    ports:
-      - "139:139"
-      - "445:445"
-    volumes:
-      - /home/seu_usuario:/mnt/share:rw
-    command: >
-      -u "hercules;asdf"
-      -s "Home_Ubuntu;/mnt/share;yes;no;no;hercules"
-      -p
-
 volumes:
   pncp_data:
     driver: local
-
