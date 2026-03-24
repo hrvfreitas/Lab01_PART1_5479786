@@ -441,7 +441,7 @@ Boxplot em escala log₁₀ mostrando a distribuição do `valor_global` por ano
 
 ### Gráfico 2 — Histograma de Distribuição de Valores
 
-![Histograma](/02_histograma.png)
+![Histograma](/data/graficos/02_histograma.png)
 
 Distribuição do `valor_global` em escala log₁₀, com frequência linear (esquerda) e logarítmica (direita). A concentração entre R$100 e R$1 milhão reflete o perfil típico de empenhos e contratos de serviços. A cauda direita indica presença de contratos de grande porte (obras e concessões).
 
@@ -449,7 +449,7 @@ Distribuição do `valor_global` em escala log₁₀, com frequência linear (es
 
 ### Gráfico 3 — Top 20 Fornecedores
 
-![Top fornecedores](/03_top_fornecedores.png)
+![Top fornecedores](/data/graficos/03_top_fornecedores.png)
 
 Painel esquerdo: fornecedores com maior volume financeiro total. Painel direito: fornecedores com maior número de contratos. A diferença entre os dois rankings revela que os maiores em valor não são necessariamente os mais frequentes — contratos de grande porte tendem a ser únicos (obras de infraestrutura, concessões).
 
@@ -457,7 +457,7 @@ Painel esquerdo: fornecedores com maior volume financeiro total. Painel direito:
 
 ### Gráfico 4 — Série Temporal Mensal
 
-![Série temporal](/04_serie_temporal.png)
+![Série temporal](/data/graficos/04_serie_temporal.png)
 
 Evolução mês a mês do valor total (acima) e da quantidade de contratos (abaixo). Picos em dezembro refletem a pressão de encerramento do exercício orçamentário. O crescimento acentuado a partir de 2024 indica expansão do uso do PNCP como plataforma obrigatória.
 
