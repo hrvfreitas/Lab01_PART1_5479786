@@ -11,6 +11,9 @@
 
 ## Sumário
 
+Disclaimer / Aviso Legal
+Nota Importante: Os dados e análises apresentados neste repositório foram capturados exclusivamente para fins de estudo da API do PNCP. O pipeline de ingestão e processamento não passou por auditoria externa e as informações constantes não devem ser utilizadas como base para decisões oficiais ou denúncias, servindo apenas como demonstração técnica de Engenharia de Dados. O autor não se responsabiliza pela exatidão integral dos dados brutos provenientes da fonte original.
+
 1. [Fonte de Dados](#1-fonte-de-dados)
 2. [Arquitetura](#2-arquitetura)
 3. [Estrutura de Diretórios](#3-estrutura-de-diretórios)
