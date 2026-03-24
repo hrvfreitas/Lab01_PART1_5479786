@@ -471,6 +471,26 @@ Todas as queries estão em `gold_queries.sql`.
 ---
  
 ## 13. Instruções de Execução
+
+ ### Aviso — Dados Originais (Bronze → Silver → Gold)
+Os arquivos completos das camadas Bronze, Silver e Gold não estão incluídos neste repositório devido ao tamanho elevado e ao tempo de processamento da etapa Bronze (coleta integral do PNCP).
+
+Para garantir reprodutibilidade total, todos os dados gerados pelo pipeline estão disponíveis no seguinte link:
+
+## Google Drive — Dados do Projeto  
+https://drive.google.com/drive/folders/1GwuG8CvDkoFgTeHnfzhDZ6MAUNOPdEAl?usp=drive_link
+
+Conteúdo disponível no Drive:
+
+data/raw/ — JSONs brutos da API PNCP (Bronze)
+
+data/silver/ — Parquets tratados e tipados (Silver)
+
+data/gold/ — Exportações do DW (opcional)
+
+logs/ — Logs completos de execução
+
+graficos/ — Gráficos gerados automaticamente
  
 ### Pré-requisitos
  
