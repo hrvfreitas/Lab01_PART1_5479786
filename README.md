@@ -433,7 +433,7 @@ Gerados por `python silver.py --graficos` em `data/graficos/`.
 
 ### Gráfico 1 — Distribuição de Valores por Ano (Boxplot)
 
-![Boxplot por ano](/01_boxplot_anos.png)
+![Boxplot por ano](/data/graficos/01_boxplot_anos.png)
 
 Boxplot em escala log₁₀ mostrando a distribuição do `valor_global` por ano. Cada caixa representa o IQR (P25–P75). Nota-se crescimento consistente no volume de contratos a partir de 2023, reflexo da adesão crescente ao PNCP após a Lei 14.133/2021.
 
