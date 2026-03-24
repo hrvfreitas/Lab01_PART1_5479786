@@ -429,7 +429,7 @@ Ranking dos maiores fornecedores da Universidade de São Paulo, com volume finan
 
 ### G8 — Ticket Médio por Categoria (Heatmap)
 
-![Ticket médio categoria](data/graficos/g8_ticket_medio_categoria.png)
+![Ticket médio categoria](data/graficos/g8_ticket_medio_heatmap.png)
 
 Heatmap mostrando a evolução do valor médio por categoria de contrato ao longo dos anos. Células mais escuras indicam contratos de maior valor médio — útil para identificar categorias com crescimento de custo acima da média.
 
