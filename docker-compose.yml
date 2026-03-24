@@ -1,0 +1,56 @@
+services:
+  postgres:
+    image: postgres:16-alpine
+    container_name: pncp_db
+    restart: unless-stopped
+    environment:
+      POSTGRES_DB:       pncp_db
+      POSTGRES_USER:     postgres
+      POSTGRES_PASSWORD: postgres
+    ports:
+      - "5432:5432"
+    volumes:
+      - pncp_data:/var/lib/postgresql/data
+    # Tuning para Ryzen 5 5500U (6 cores / 16 GB RAM)
+    command: >
+      postgres
+        -c shared_buffers=3GB
+        -c effective_cache_size=10GB
+        -c work_mem=64MB
+        -c maintenance_work_mem=512MB
+        -c max_connections=50
+        -c checkpoint_completion_target=0.9
+        -c wal_buffers=64MB
+        -c max_wal_size=4GB
+        -c min_wal_size=1GB
+        -c default_statistics_target=100
+        -c random_page_cost=1.1
+        -c effective_io_concurrency=200
+        -c max_worker_processes=6
+        -c max_parallel_workers_per_gather=3
+        -c max_parallel_workers=6
+        -c max_parallel_maintenance_workers=3
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U postgres -d pncp_db"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+
+  samba:
+    image: dperson/samba
+    container_name: samba_share
+    restart: unless-stopped
+    ports:
+      - "139:139"
+      - "445:445"
+    volumes:
+      - /home/seu_usuario:/mnt/share:rw
+    command: >
+      -u "hercules;asdf"
+      -s "Home_Ubuntu;/mnt/share;yes;no;no;hercules"
+      -p
+
+volumes:
+  pncp_data:
+    driver: local
+

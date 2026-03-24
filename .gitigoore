@@ -1,0 +1,20 @@
+# Logs
+*.log
+logs/
+
+# Dados (raw e silver) - NÃO commitar!
+data/raw/
+data/silver/
+
+# Python
+__pycache__/
+*.pyc
+.venv/
+venv/
+
+# IDE
+.vscode/
+.idea/
+
+# Ambiente
+.env
